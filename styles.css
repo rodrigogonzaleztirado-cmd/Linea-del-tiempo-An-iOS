@@ -1,0 +1,290 @@
+/* ========================= */
+/* ===== ESTILOS ANDROID ===== */
+/* ========================= */
+
+body.android {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+body.android .timeline::before {
+    background: #00ff88;
+}
+
+body.android .header-info h2 {
+    color: #00ff88;
+}
+
+body.android .card {
+    background: linear-gradient(145deg,#0d2f3f,#081b29);
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px #06131d,
+               -8px -8px 20px #113a4f;
+}
+
+body.android .card img:hover {
+    box-shadow: 0 15px 35px #00ff9950;
+}
+
+body.android .info {
+    color: #e0fdf4;
+}
+
+body.android .ios-btn {
+    background: linear-gradient(135deg,#00ff88,#00cc66);
+    box-shadow: 0 10px 30px rgba(0,255,136,0.4);
+}
+
+body.android .ios-btn:hover {
+    box-shadow: 0 15px 40px rgba(0,255,136,0.6);
+}
+
+
+/* ========================= */
+/* ===== ESTILOS iOS ===== */
+/* ========================= */
+
+body.ios {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", sans-serif;
+    background: #f2f2f7;
+    color: #1c1c1e;
+}
+
+body.ios .timeline::before {
+    background: #007aff;
+}
+
+body.ios .header-info h2 {
+    color: #007aff;
+}
+
+body.ios .card {
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.ios .info {
+    color: #3a3a3c;
+}
+
+body.ios .ios-btn {
+    background: #007aff;
+    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+}
+
+body.ios .ios-btn:hover {
+    background: #005ecb;
+    box-shadow: 0 15px 40px rgba(0, 122, 255, 0.5);
+}
+
+
+/* ========================= */
+/* ===== ESTILO GENERAL ===== */
+/* ========================= */
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+    padding: 20px 60px;
+    box-sizing: border-box;
+}
+
+.left {
+    left: 0;
+    text-align: right;
+}
+
+.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* ========================= */
+/* ===== FLECHAS MEJORADAS ===== */
+/* ========================= */
+
+/* Quitamos cualquier flecha vieja */
+.container::after {
+    display: none;
+}
+
+/* Hacemos que la card sea referencia */
+.card {
+    position: relative;
+}
+
+/* Línea de la flecha */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+/* Punta de la flecha - DESACTIVADA */
+.card::after {
+    display: none;
+}
+
+/* ===== ANDROID ===== */
+
+/* Flechas izquierda (left) */
+body.android .left .card::before {
+    right: -40px;
+    width: 40px;
+    background: linear-gradient(to right, transparent, #00ff88);
+}
+
+/* Flechas derecha (right) */
+body.android .right .card::before {
+    left: -40px;
+    width: 40px;
+    background: linear-gradient(to left, transparent, #00ff88);
+}
+
+/* Hover effect para Android */
+body.android .card:hover::before {
+    filter: brightness(1.3);
+}
+
+/* ===== iOS ===== */
+
+/* Flechas izquierda (left) */
+body.ios .left .card::before {
+    right: -40px;
+    width: 40px;
+    background: linear-gradient(to right, transparent, #007aff);
+}
+
+/* Flechas derecha (right) */
+body.ios .right .card::before {
+    left: -40px;
+    width: 40px;
+    background: linear-gradient(to left, transparent, #007aff);
+}
+
+/* Hover effect para iOS */
+body.ios .card:hover::before {
+    filter: brightness(1.3);
+}
+
+.header-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.header-info span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.card {
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100px;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.08);
+}
+
+.info {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.show {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.ios-section {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.ios-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media screen and (max-width: 768px) {
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .right {
+        left: 0;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .container::after {
+        display: none;
+    }
+}
